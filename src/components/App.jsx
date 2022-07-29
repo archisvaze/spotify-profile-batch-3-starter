@@ -6,36 +6,36 @@ import ArtistsPage from "./ArtistsPage/ArtistsPage";
 import TracksPage from "./Tracks Page/TracksPage";
 import RecentActivityPage from "./RecentActivityPage/RecentActivityPage";
 import PlaylistPage from "./PlaylistPage/PlaylistPage";
-import HeaderComponent from "./HeaderComponent/HeaderComponent";
+import Sidebar from "./Sidebar/Sidebar";
 import "../style.css"
 import { useEffect } from "react";
 import LoginPage from "./LoginPage/LoginPage";
-function App(props){
-  let state = useSelector(state=>state.myState)
-// useEffect(()=>{
-//         localStorage.setItem("spotifyState", JSON.stringify(state))
-//     }, [state])
+function App(props) {
+    let state = useSelector(state => state.myState)
+    // useEffect(()=>{
+    //         localStorage.setItem("spotifyState", JSON.stringify(state))
+    //     }, [state])
 
-    return(
+    return (
         <div className="app">
-        <Routes>
-            <Route path="/" element={<LoginPage/>} />
-            <Route element ={
-            <div>
-             <HeaderComponent/>
             <Routes>
-            <Route path="/profile" element ={<ProfilePage/>} />
-            <Route path="/top-artists" element ={<ArtistsPage/>}/>
-            <Route path="/top-tracks" element ={<TracksPage/>}/>
-            <Route path="/Recent-activity" element ={<RecentActivityPage/>}/>
-            <Route path="/Playlists" element ={<PlaylistPage/>}/>  
+                <Route path="/" element={<LoginPage />} />
+                <Route element={
+                    <div>
+                        <Sidebar />
+                        <Routes>
+                            <Route path="/profile" element={<ProfilePage />} />
+                            <Route path="/top-artists" element={<ArtistsPage />} />
+                            <Route path="/top-tracks" element={<TracksPage />} />
+                            <Route path="/Recent-activity" element={<RecentActivityPage />} />
+                            <Route path="/Playlists" element={<PlaylistPage />} />
+                        </Routes>
+                    </div>
+                } />
+
             </Routes>
-            </div>
-            }/>
-           
-        </Routes>
         </div>
     )
-        }
+}
 
 export default App;
