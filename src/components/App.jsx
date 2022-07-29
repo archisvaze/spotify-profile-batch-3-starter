@@ -21,15 +21,21 @@ function App(props) {
         let url = window.location.hash
         if (url.includes("#")) {
             let token = url.split("=")[1].split("&")[0]
-            navigate("/profile")
             dispatch(addToken(token))
-            fetch("api.spotify.com/v1/me", {
+            fetch("https://api.spotify.com/v1/me/", {
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json",
                     "Authorization": 'Bearer ' + token
                 }
-            }).then(response => response.json()).then((response) => console.log(response.data))
+            }).then(response => response.json())
+                .then(
+                    data => {
+                        console.log(data)
+                        navigate("/profile")
+                    }
+
+                )
         }
 
     }, [window.location.hash])
