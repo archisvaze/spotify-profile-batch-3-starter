@@ -39,17 +39,12 @@ function App(props) {
             <Sidebar />
             <Routes>
                 <Route path="/" element={<LoginPage />} />
-                <Route element={
-                    <div>
-                        <Routes>
-                            <Route path="/profile" element={<ProfilePage />} />
-                            <Route path="/top-artists" element={<ArtistsPage />} />
-                            <Route path="/top-tracks" element={<TracksPage />} />
-                            <Route path="/Recent-activity" element={<RecentActivityPage />} />
-                            <Route path="/Playlists" element={<PlaylistPage />} />
-                        </Routes>
-                    </div>
-                } />
+
+                <Route path="/profile" element={<ProfilePage />} />
+                <Route path="/top-artists" element={<ArtistsPage />} />
+                <Route path="/top-tracks" element={<TracksPage />} />
+                <Route path="/Recent-activity" element={<RecentActivityPage />} />
+                <Route path="/Playlists" element={<PlaylistPage />} />
 
             </Routes>
         </div>

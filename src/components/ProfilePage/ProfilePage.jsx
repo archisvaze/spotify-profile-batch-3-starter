@@ -1,10 +1,10 @@
 import React from 'react'
-import Sidebar from '../Sidebar/Sidebar'
+import "./ProfilePage.css"
 
 export default function ProfilePage() {
   return (
-    <div>
-  
+    <div className='profile-page-container'>
+
     </div>
   )
 }
