@@ -1,7 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { useSelector, useDispatch } from 'react-redux';
 import { save } from "../slices/mySlice"
-import LoginPage from "./LoginPage/LoginPage";
 import ProfilePage from "./ProfilePage/ProfilePage";
 import ArtistsPage from "./ArtistsPage/ArtistsPage";
 import TracksPage from "./Tracks Page/TracksPage";
@@ -9,10 +8,13 @@ import RecentActivityPage from "./RecentActivityPage/RecentActivityPage";
 import PlaylistPage from "./PlaylistPage/PlaylistPage";
 import HeaderComponent from "./HeaderComponent/HeaderComponent";
 import "../style.css"
+import { useEffect } from "react";
+import LoginPage from "./LoginPage/LoginPage";
 function App(props){
-
-const dispatch = useDispatch();
-const state = useSelector(state => state.myState)
+  let state = useSelector(state=>state.myState)
+useEffect(()=>{
+        localStorage.setItem("spotifyState", JSON.stringify(state))
+    }, [state])
 
     return(
         <div className="app">
@@ -34,6 +36,6 @@ const state = useSelector(state => state.myState)
         </Routes>
         </div>
     )
-}
+        }
 
 export default App;
