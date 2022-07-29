@@ -29,20 +29,21 @@ useEffect(()=>{
             "Content-Type": "application/json",
             "Authorization": 'Bearer ' + token
           }
-       }).then(response=>response.json()).then((response)=>console.log(response.data))
+       }).then(response=>response.json())
+       .then(data=>console.log(data))
     }
 
 },[window.location.hash])
-
+   
     return (
         <div className="app">
             <Routes>
                 <Route path="/" element={<LoginPage />} />
-                <Route element={
+                <Route path = "/"element={
                     <div>
                         <Sidebar />
                         <Routes>
-                            <Route path="/profile" element={<ProfilePage />} />
+                            <Route path="/:token" element={<ProfilePage />} />
                             <Route path="/top-artists" element={<ArtistsPage />} />
                             <Route path="/top-tracks" element={<TracksPage />} />
                             <Route path="/Recent-activity" element={<RecentActivityPage />} />
