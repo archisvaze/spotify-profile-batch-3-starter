@@ -12,9 +12,9 @@ import { useEffect } from "react";
 import LoginPage from "./LoginPage/LoginPage";
 function App(props){
   let state = useSelector(state=>state.myState)
-useEffect(()=>{
-        localStorage.setItem("spotifyState", JSON.stringify(state))
-    }, [state])
+// useEffect(()=>{
+//         localStorage.setItem("spotifyState", JSON.stringify(state))
+//     }, [state])
 
     return(
         <div className="app">
