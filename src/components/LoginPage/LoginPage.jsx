@@ -8,16 +8,12 @@ const AUTH_ENDPOINT = "https://accounts.spotify.com/authorize"
 const RESPONSE_TYPE = "token"
 const CLIENT_SECRET = "f764b0ca59bb4ccb91d81d3ede3237c7"
 export default function LoginPage() {
-    // let dispatch = useDispatch(mySlice)
   return (
     <div className='login-page' >
         <h1 className='login-label' >Spotify Profile</h1>
-        <button
-        //  onClick={useDispatch("login")}
-          className='login-btn'>
-            
-            Login to spotify
-            </button>
+        <a className='login-btn' href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}`}>
+        Login to Spotify
+        </a>
 
     </div>
   )
