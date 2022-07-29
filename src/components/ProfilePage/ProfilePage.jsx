@@ -1,7 +1,10 @@
 import React from 'react'
+import "./ProfilePage.css"
 
 export default function ProfilePage() {
   return (
-    <div>ProfilePage</div>
+    <div className='profile-page-container'>
+
+    </div>
   )
 }

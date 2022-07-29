@@ -9,7 +9,7 @@
     align-items: center;
     padding: 20px 0;
     background-color: #040306;
-    box-shadow: 3px 0px 5px 2px black;
+    box-shadow: 3px 0px 10px 2px rgba(0, 0, 0, 0.2);
 }
 
 .top-icon {
@@ -27,7 +27,8 @@
     height: 70px;
     width: 80px;
 }
-.icon-tag{
+
+.icon-tag {
     color: white;
     font-size: 12px;
 }
