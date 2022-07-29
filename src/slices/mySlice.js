@@ -15,7 +15,7 @@ const mySlice = createSlice({
         save: (state, action) => {
             state.saved = action.payload;
         },
-        setToken
+        
 
     }
 
