@@ -1,5 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { useSelector, useDispatch } from 'react-redux';
+import { Route, Routes } from 'react-router-dom';
 import { save } from "../slices/mySlice"
 import { useEffect } from "react";
 function App(props) {
@@ -11,10 +12,23 @@ function App(props) {
         localStorage.setItem("spotifyState", JSON.stringify(state))
     }, [state])
 
-    return (
-        <div className="main">
-            <h1>Hi</h1>
-        </div>
+    return(
+        <Routes>
+            <Route path="/" element={<Login/>} />
+            <Route element ={
+            <div>
+             <HeaderComponent/>
+            <Routes>
+            <Route/>
+            <Route/>
+            <Route/>
+            <Route/>
+            <Route/>  
+            </Routes>
+            </div>
+            }/>
+           
+        </Routes>
     )
 }
 
