@@ -19,9 +19,7 @@ const mySlice = createSlice({
         addToken :(state,action) =>{
             state.token = action.payload
         }
-
     }
-
 })
 
 
