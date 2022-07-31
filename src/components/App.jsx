@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from 'react-redux';
-import mySlice, { save, addToken, addUser } from "../slices/mySlice"
+import { addToken, addUser } from "../slices/mySlice"
 import ProfilePage from "./ProfilePage/ProfilePage";
 import ArtistsPage from "./ArtistsPage/ArtistsPage";
 import TracksPage from "./Tracks Page/TracksPage";
@@ -15,7 +15,7 @@ import LoginPage from "./LoginPage/LoginPage";
 
 function App(props) {
 
-    let dispatch = useDispatch(mySlice)
+    let dispatch = useDispatch()
 
     let state = useSelector(state => state.myState)
 
@@ -30,13 +30,9 @@ function App(props) {
         let url = window.location.hash
         if (url.includes("#")) {
             let token = "";
-            if (state.token) {
-                token = state.token;
-            }
-            else {
                 token = url.split("=")[1].split("&")[0]
                 dispatch(addToken(token))
-            }
+           
             fetch("https://api.spotify.com/v1/me/", {
                 method: "GET",
                 headers: {

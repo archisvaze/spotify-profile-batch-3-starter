@@ -13,7 +13,10 @@ import { Link } from 'react-router-dom';
 export default function Sidebar() {
   return (
     <div className='header-container'>
+      <Link key={"home"} to={"/"}>
       <img className='top-icon' src={spotify} alt="" />
+      </Link>
+     
 
       <div className="actions-container">
 

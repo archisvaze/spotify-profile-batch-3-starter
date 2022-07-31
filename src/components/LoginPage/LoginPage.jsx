@@ -7,6 +7,7 @@ const REDIRECT_URI = "http://localhost:3000/callback"
 const AUTH_ENDPOINT = "https://accounts.spotify.com/authorize"
 const RESPONSE_TYPE = "token"
 const CLIENT_SECRET = "f764b0ca59bb4ccb91d81d3ede3237c7"
+const SCOPE = "user-top-read"
 
 export default function LoginPage() {
 
@@ -19,7 +20,7 @@ export default function LoginPage() {
   return (
     <div className='login-page' >
       <h1 className='login-label' >Spotify Profile</h1>
-      <a className='login-btn' href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}`}>
+      <a className='login-btn' href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}&scope=${SCOPE}`}>
         Login to Spotify
       </a>
 
