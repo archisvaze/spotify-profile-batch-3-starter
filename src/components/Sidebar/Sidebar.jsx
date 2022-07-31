@@ -27,11 +27,14 @@ export default function Sidebar() {
 
       <div className="actions-container">
 
+        <Link style={{ textDecoration: "none" }} key={"profile"} to={"/profile"}>
+          <button style={{ backgroundColor: state.flag === "profile" ? "grey" : "black", borderLeft: state.flag === "profile" ? " 7px solid #1cd760" : "none" }} className="profile header-btn">
+            <img className='icon' src={profile} alt="" />
+            <p className="icon-tag">Profile</p>
+          </button>
+        </Link>
 
-        <button className="profile header-btn">
-          <img className='icon' src={profile} alt="" />
-          <p className="icon-tag">Profile</p>
-        </button>
+
 
 
         <Link style={{ textDecoration: "none" }} key={"top-artists"} to={"/top-artists"} >

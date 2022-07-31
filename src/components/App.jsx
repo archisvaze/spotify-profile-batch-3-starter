@@ -60,8 +60,8 @@ function App(props) {
                 <Route path="/profile" element={<ProfilePage />} />
                 <Route path="/top-artists" element={<ArtistsPage />} />
                 <Route path="/top-tracks" element={<TracksPage />} />
-                <Route path="/Recent-activity" element={<RecentActivityPage />} />
-                <Route path="/Playlists" element={<PlaylistPage />} />
+                <Route path="/recent" element={<RecentActivityPage />} />
+                <Route path="/playlists" element={<PlaylistPage />} />
 
             </Routes>
         </div>
