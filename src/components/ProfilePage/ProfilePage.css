@@ -8,15 +8,17 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-top: 5vh;
 }
 .profile-pic {
     border-radius: 300px;
-    transform: scale(0.6);
+    height: 250px;
     border: 5px solid white;
+    margin-bottom: 3vh;
 }
 .profile-stats {
     display: flex;
-    gap: 15px;
+    gap: 20px;
     justify-content: center;
     align-items: center;
 }
@@ -53,6 +55,7 @@
     justify-content: flex-start;
     align-items: flex-start;
     position: relative;
+    height: 280px;
 }
 .artist-pic,.album-pic{
     height: 90%;
@@ -62,7 +65,7 @@
     display: flex;
     justify-content: space-between;
     width: 100%;
-    align-items: center;
+    align-items:center;
 }
 
 .profile-artists-card, .profile-tracks-card{
@@ -75,6 +78,9 @@
 .track-length {
     position: absolute;
     right: 10px;
+}
+.logout {
+    margin-left: 20px;
 }
 @media only screen and (max-width:480px) {
     .bottom-profile-container {

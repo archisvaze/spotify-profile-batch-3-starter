@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { useNavigate } from "react-router-dom";
 let initialState = {};
 if (localStorage.getItem("spotifyState") === null) {
     initialState = { saved: "", token: "", artists: [], flag: "profile", tracks: [], recents :[],playlists:[] }
@@ -6,7 +7,6 @@ if (localStorage.getItem("spotifyState") === null) {
 else {
     initialState = JSON.parse(localStorage.getItem("spotifyState"));
 }
-
 
 const mySlice = createSlice({
     name: "mySlice",
@@ -38,11 +38,19 @@ const mySlice = createSlice({
         },
         setPlaylists : (state, action) =>{
             state.playlists = action.payload
+        },
+        logout : (state,action)=>{
+           state.save= ""
+           state.token= ""
+           state.playlists= []
+           state.recents= []
+           state.tracks = []
+
         }
 
     }
 })
 
 
-export const { save, addToken, addUser, setArtists, setFlag, clearFlag, setTracks, setRecents,setPlaylists } = mySlice.actions;
+export const { save, addToken, addUser, setArtists, setFlag, clearFlag, setTracks, setRecents,setPlaylists,logout } = mySlice.actions;
 export default mySlice.reducer;

@@ -37,34 +37,6 @@ export default function PlaylistPage() {
         <p>{ele.tracks.total} Tracks</p>
           </div>
       })}
-      {state.playlists.map(ele=>{
-        return <div className='playlist-card'>
-        <img className='playlist-img' src={ele.images[0].url} alt="" />
-        <h3>{ele.name}</h3>
-        <p>{ele.tracks.total} Tracks</p>
-          </div>
-      })}
-      {state.playlists.map(ele=>{
-        return <div className='playlist-card'>
-        <img className='playlist-img' src={ele.images[0].url} alt="" />
-        <h3>{ele.name}</h3>
-        <p>{ele.tracks.total} Tracks</p>
-          </div>
-      })}
-      {state.playlists.map(ele=>{
-        return <div className='playlist-card'>
-        <img className='playlist-img' src={ele.images[0].url} alt="" />
-        <h3>{ele.name}</h3>
-        <p>{ele.tracks.total} Tracks</p>
-          </div>
-      })}
-      {state.playlists.map(ele=>{
-        return <div className='playlist-card'>
-        <img className='playlist-img' src={ele.images[0].url} alt="" />
-        <h3>{ele.name}</h3>
-        <p>{ele.tracks.total} Tracks</p>
-          </div>
-      })}
       
       </div>
       </div>
