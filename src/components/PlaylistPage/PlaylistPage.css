@@ -25,3 +25,16 @@
     align-items: center;
     margin-bottom: 30px;
 }
+@media only screen and (max-width:480px) {
+    .playlists-page {
+        width: 90vw;
+    }
+    .playlists-container {
+        flex-direction: column;
+        margin-top: 20px;
+    }
+    .playlist-card{
+        width: 100%;
+     
+    }
+}
