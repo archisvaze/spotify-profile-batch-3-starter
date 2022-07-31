@@ -8,15 +8,22 @@ import recents from "./recents.svg"
 import playlist from "./playlist.svg"
 import github from "./github.svg"
 import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { clearFlag } from '../../slices/mySlice';
 
 
 export default function Sidebar() {
+
+  let dispatch = useDispatch()
+  let state = useSelector(state => state.myState)
+
+
   return (
     <div className='header-container'>
       <Link key={"home"} to={"/"}>
-      <img className='top-icon' src={spotify} alt="" />
+        <img className='top-icon' src={spotify} alt="" />
       </Link>
-     
+
 
       <div className="actions-container">
 
@@ -27,8 +34,8 @@ export default function Sidebar() {
         </button>
 
 
-        <Link key={"top-artists"} to={"/top-artists"} >
-          <button className="top-artists header-btn">
+        <Link style={{ textDecoration: "none" }} key={"top-artists"} to={"/top-artists"} >
+          <button style={{ backgroundColor: state.flag === "top-artists" ? "grey" : "black", borderLeft: state.flag === "top-artists" ? " 7px solid #1cd760" : "none" }} className="top-artists header-btn">
             <img className='icon' src={mic} alt="" />
             <p className="icon-tag">Top Artists</p>
           </button>

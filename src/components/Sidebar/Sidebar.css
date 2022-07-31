@@ -23,12 +23,14 @@
     align-items: center;
     gap: 5px;
     border: none;
-    background-color: transparent;
     height: 70px;
     width: 80px;
 }
-
+.icon{
+    background-color: transparent;
+}
 .icon-tag {
     color: white;
     font-size: 12px;
+    background-color: transparent;
 }

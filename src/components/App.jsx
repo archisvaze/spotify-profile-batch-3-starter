@@ -16,7 +16,6 @@ import LoginPage from "./LoginPage/LoginPage";
 function App(props) {
 
     let dispatch = useDispatch()
-
     let state = useSelector(state => state.myState)
 
     useEffect(() => {

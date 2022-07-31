@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import "./ArtistsPage.css"
-import { setArtists } from "../../slices/mySlice"
+import { setArtists, setFlag } from "../../slices/mySlice"
 import Artist from './Artist'
 
 export default function ArtistsPage() {
@@ -9,7 +9,10 @@ export default function ArtistsPage() {
   let dispatch = useDispatch()
   let state = useSelector(state => state.myState)
 
+
   useEffect(() => {
+    dispatch(setFlag("top-artists"));
+    
     fetch("https://api.spotify.com/v1/me/top/artists", {
       method: "GET",
       headers: {
@@ -28,7 +31,7 @@ export default function ArtistsPage() {
 
   return (
     <div className='artists-page-container'>
-      <h3>Top Artists</h3>
+      <h3>Top Artists You Listen</h3>
       <div className="artists-container">
         {state.artists.map(obj => {
           return (

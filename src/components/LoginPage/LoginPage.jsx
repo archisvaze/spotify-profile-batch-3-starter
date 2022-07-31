@@ -1,6 +1,6 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import mySlice from '../../slices/mySlice'
+import mySlice, { clearFlag } from '../../slices/mySlice'
 import "./LoginPage.css"
 const CLIENT_ID = "6e26e74044fa468d81eabcf6fea33e9b"
 const REDIRECT_URI = "http://localhost:3000/callback"
@@ -12,8 +12,8 @@ const SCOPE = "user-top-read"
 export default function LoginPage() {
 
   const state = useSelector(state => state.myState)
-  console.log(state)
-
+  let dispatch = useDispatch()
+  dispatch(clearFlag());
 
 
 

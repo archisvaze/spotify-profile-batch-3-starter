@@ -1,20 +1,23 @@
 .artists-page-container {
     min-height: 100%;
     min-width: 100vw;
+    padding-top: 50px;
     padding-left: 100px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
 }
+
+.artists-page-container h3 {}
 
 .artists-container {
     display: flex;
     flex-wrap: wrap;
-    height: 80vh;
-    width: 80vw;
+    max-height: 80vh;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
+    max-width: 900px;
+    margin-top: 100px;
 }
 
 .artist {
@@ -24,6 +27,8 @@
     align-items: center;
     margin: 10px;
     gap: 10px;
+    height: 150px;
+    width: 150px;
 }
 
 .name {
@@ -32,8 +37,8 @@
 }
 
 .artist img {
-    width: 150px;
-    height: 150px;
-    border-radius: 75px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
     object-fit: cover;
 }
