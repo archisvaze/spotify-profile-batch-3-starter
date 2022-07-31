@@ -24,10 +24,8 @@ export default function TracksPage() {
     }).then(response => response.json())
       .then(
         data => {
+          console.log(data)
           dispatch(setTracks(data.items))
-          console.log(state.tracks)
-
-
         }
       )
   }, [])

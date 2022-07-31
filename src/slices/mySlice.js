@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 let initialState = {};
 if (localStorage.getItem("spotifyState") === null) {
-    initialState = { saved: "", token: "", artists: [], flag: "profile", tracks: [] }
+    initialState = { saved: "", token: "", artists: [], flag: "profile", tracks: [], recents :[] }
 }
 else {
     initialState = JSON.parse(localStorage.getItem("spotifyState"));
@@ -24,19 +24,22 @@ const mySlice = createSlice({
         setArtists: (state, action) => {
             state.artists = action.payload;
         },
-        setFlag : (state, action) => {
+        setFlag: (state, action) => {
             state.flag = action.payload
         },
-        clearFlag: (state, action) =>{
+        clearFlag: (state, action) => {
             state.flag = "";
         },
-        setTracks : (state, action) => {
+        setTracks: (state, action) => {
             state.tracks = action.payload
+        },
+        setRecents : (state, action) =>{
+            state.recents = action.payload
         }
 
     }
 })
 
 
-export const { save, addToken, addUser, setArtists, setFlag, clearFlag , setTracks} = mySlice.actions;
+export const { save, addToken, addUser, setArtists, setFlag, clearFlag, setTracks, setRecents } = mySlice.actions;
 export default mySlice.reducer;

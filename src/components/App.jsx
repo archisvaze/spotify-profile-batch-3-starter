@@ -4,7 +4,7 @@ import { addToken, addUser } from "../slices/mySlice"
 import ProfilePage from "./ProfilePage/ProfilePage";
 import ArtistsPage from "./ArtistsPage/ArtistsPage";
 import TracksPage from "./Tracks Page/TracksPage";
-import RecentActivityPage from "./RecentActivityPage/RecentActivityPage";
+import RecentPage from "./RecentPage/RecentPage";
 import PlaylistPage from "./PlaylistPage/PlaylistPage";
 import Sidebar from "./Sidebar/Sidebar";
 import "../style.css"
@@ -56,11 +56,10 @@ function App(props) {
             <Sidebar />
             <Routes>
                 <Route path="/" element={<LoginPage />} />
-
                 <Route path="/profile" element={<ProfilePage />} />
                 <Route path="/top-artists" element={<ArtistsPage />} />
                 <Route path="/top-tracks" element={<TracksPage />} />
-                <Route path="/recent" element={<RecentActivityPage />} />
+                <Route path="/recent" element={<RecentPage />} />
                 <Route path="/playlists" element={<PlaylistPage />} />
 
             </Routes>

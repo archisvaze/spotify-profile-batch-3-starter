@@ -1,4 +1,4 @@
-.tracks-page-container {
+.recent-page-container {
     min-height: 100%;
     min-width: 100vw;
     padding-top: 50px;
@@ -8,7 +8,7 @@
     align-items: center;
 }
 
-.track-container {
+.recent-container {
     width: 80%;
     max-width: 900px;
     display: flex;
@@ -22,37 +22,56 @@
     transition: 0.5s;
 }
 
-.track-container:hover {
+.recent-time-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 5px;
+}
+
+.recent-duration {
+    text-align: right;
+    font-size: 13px;
+}
+
+.recent-time {
+    text-align: right;
+    font-size: 12px;
+    color: rgb(121, 121, 121);
+}
+
+.recent-container:hover {
     transform: scale(1.05);
 }
 
-.track-name {
+.recent-name {
     margin: 5px 0;
     font-size: 16px;
     font-weight: bold;
 }
 
-.track-artist-name {
-    font-size: 14px;
+.recent-artist-name {
+    font-size: 13px;
     font-weight: bold;
     color: rgb(156, 156, 156);
 }
 
-.track-container img {
-    width: 70px;
-    height: 70px;
+.recent-container img {
+    width: 50px;
+    height: 50px;
     border-radius: 5px;
     object-fit: cover;
 }
 
-.track-artists-container {
+.recent-artists-container {
     display: flex;
     gap: 10px;
     flex-wrap: wrap;
 }
 
+
 @media screen and (min-width: 600px) {
-    .tracks-page-container {
+    .recent-page-container {
         min-height: 100%;
         min-width: 100vw;
         padding-top: 50px;
@@ -61,4 +80,5 @@
         flex-direction: column;
         align-items: center;
     }
+    
 }

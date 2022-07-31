@@ -19,7 +19,7 @@ export default function Sidebar() {
 
 
   return (
-    <div style={{ display: state.flag === "login" ? "none" : "flex" }} className='header-container'>
+    <div style={{ display: state.flag === "login" ? "none" : "flex" }} className='sidebar-container'>
       <Link key={"home"} to={"/"}>
         <img className='top-icon' src={spotify} alt="" />
       </Link>
@@ -54,11 +54,12 @@ export default function Sidebar() {
 
 
 
-
-        <button style={{ backgroundColor: state.flag === "recents" ? "rgb(51, 51, 51)" : "black", borderLeft: state.flag === "recents" ? " 7px solid #1cd760" : "none" }} className="recent header-btn">
-          <img className='icon' src={recents} alt="" />
-          <p className="icon-tag">Recent</p>
-        </button>
+        <Link style={{ textDecoration: "none" }} key={"recent"} to={"/recent"}>
+          <button style={{ backgroundColor: state.flag === "recent" ? "rgb(51, 51, 51)" : "black", borderLeft: state.flag === "recent" ? " 7px solid #1cd760" : "none" }} className="recent header-btn">
+            <img className='icon' src={recents} alt="" />
+            <p className="icon-tag">Recent</p>
+          </button>
+        </Link>
 
 
 

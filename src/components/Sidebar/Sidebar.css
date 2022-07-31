@@ -1,15 +1,13 @@
-.header-container {
-    height: 100vh;
-    width: 80px;
+.sidebar-container {
+    width: 100vw;
     position: fixed;
-    left: 0;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    flex-direction: row;
+    justify-content: center;
     align-items: center;
-    padding: 20px 0;
     background-color: #040306;
-    box-shadow: 3px 0px 10px 2px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px -5px 10px 2px rgba(0, 0, 0, 0.2);
+    bottom: 0;
 }
 
 button {
@@ -17,7 +15,14 @@ button {
 }
 
 .top-icon {
-    width: 40px;
+    display: none;
+}
+
+.actions-container {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .header-btn {
@@ -28,7 +33,7 @@ button {
     gap: 5px;
     border: none;
     height: 70px;
-    width: 80px;
+    width: 60px;
 }
 
 .icon {
@@ -41,3 +46,39 @@ button {
     background-color: transparent;
 }
 
+@media screen and (min-width: 600px) {
+    .sidebar-container {
+        height: 100vh;
+        width: 80px;
+        position: fixed;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 0;
+        background-color: #040306;
+        box-shadow: 3px 0px 10px 2px rgba(0, 0, 0, 0.2);
+    }
+
+    .actions-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .top-icon {
+        display: flex;
+        width: 40px;
+    }
+
+    .header-btn {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+        border: none;
+        height: 70px;
+        width: 80px;
+    }
+}
