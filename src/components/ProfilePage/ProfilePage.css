@@ -76,3 +76,23 @@
     position: absolute;
     right: 10px;
 }
+@media only screen and (max-width:480px) {
+    .bottom-profile-container {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        width: 90vw;
+    }
+    .profile-top-artists-container,.profile-top-tracks-container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        justify-content: flex-start;
+        align-items: flex-start;
+        position: relative;
+        gap: 3vh;
+    }
+   .profile-page-container{
+    padding-left: 3vw;
+   }    
+}
