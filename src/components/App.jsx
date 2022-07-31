@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from 'react-redux';
-import mySlice, { save, addToken } from "../slices/mySlice"
+import mySlice, { save, addToken, addUser } from "../slices/mySlice"
 import ProfilePage from "./ProfilePage/ProfilePage";
 import ArtistsPage from "./ArtistsPage/ArtistsPage";
 import TracksPage from "./Tracks Page/TracksPage";
@@ -10,18 +10,33 @@ import Sidebar from "./Sidebar/Sidebar";
 import "../style.css"
 import { useEffect } from "react";
 import LoginPage from "./LoginPage/LoginPage";
+
+
+
 function App(props) {
+
     let dispatch = useDispatch(mySlice)
+
     let state = useSelector(state => state.myState)
+
     useEffect(() => {
         localStorage.setItem("spotifyState", JSON.stringify(state))
     }, [state])
+
+
     let navigate = useNavigate()
+
     useEffect(() => {
         let url = window.location.hash
         if (url.includes("#")) {
-            let token = url.split("=")[1].split("&")[0]
-            dispatch(addToken(token))
+            let token = "";
+            if (state.token) {
+                token = state.token;
+            }
+            else {
+                token = url.split("=")[1].split("&")[0]
+                dispatch(addToken(token))
+            }
             fetch("https://api.spotify.com/v1/me/", {
                 method: "GET",
                 headers: {
@@ -32,6 +47,7 @@ function App(props) {
                 .then(
                     data => {
                         console.log(data)
+                        dispatch(addUser(data))
                         navigate("/profile")
                     }
 
