@@ -45,11 +45,13 @@ export default function Sidebar() {
         </Link>
 
 
+        <Link style={{ textDecoration: "none" }} key={"top-tracks"} to={"/top-tracks"} >
+          <button style={{ backgroundColor: state.flag === "top-tracks" ? "grey" : "black", borderLeft: state.flag === "top-tracks" ? " 7px solid #1cd760" : "none" }} className="top-tracks header-btn">
+            <img className='icon' src={music} alt="" />
+            <p className="icon-tag">Top Tracks</p>
+          </button>
+        </Link>
 
-        <button className="top-tracks header-btn">
-          <img className='icon' src={music} alt="" />
-          <p className="icon-tag">Top Tracks</p>
-        </button>
 
 
 
