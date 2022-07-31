@@ -12,6 +12,10 @@
     box-shadow: 3px 0px 10px 2px rgba(0, 0, 0, 0.2);
 }
 
+button {
+    cursor: pointer;
+}
+
 .top-icon {
     width: 40px;
 }
@@ -26,9 +30,11 @@
     height: 70px;
     width: 80px;
 }
-.icon{
+
+.icon {
     background-color: transparent;
 }
+
 .icon-tag {
     color: white;
     font-size: 12px;

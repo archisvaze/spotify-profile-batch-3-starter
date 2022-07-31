@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import "./ArtistsPage.css"
-import { setArtists, setFlag } from "../../slices/mySlice"
+import { clearFlag, setArtists, setFlag } from "../../slices/mySlice"
 import Artist from './Artist'
 
 export default function ArtistsPage() {
@@ -11,8 +11,9 @@ export default function ArtistsPage() {
 
 
   useEffect(() => {
+    dispatch(clearFlag());
     dispatch(setFlag("top-artists"));
-    
+
     fetch("https://api.spotify.com/v1/me/top/artists", {
       method: "GET",
       headers: {
