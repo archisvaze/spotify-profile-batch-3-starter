@@ -9,6 +9,22 @@ export default function ArtistsPage() {
   let dispatch = useDispatch()
   let state = useSelector(state => state.myState)
 
+  function fetchAll() {
+    fetch("https://api.spotify.com/v1/me/top/artists", {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": 'Bearer ' + state.token
+      }
+    }).then(response => response.json())
+      .then(
+        data => {
+          console.log(data)
+          dispatch(setArtists(data.items))
+          console.log(state.artists)
+        }
+      )
+  }
 
   useEffect(() => {
     dispatch(clearFlag());
@@ -26,7 +42,7 @@ export default function ArtistsPage() {
           data => {
             console.log(data)
             dispatch(setArtists(data.items))
-            console.log(state.artists)
+            
           }
         )
     }

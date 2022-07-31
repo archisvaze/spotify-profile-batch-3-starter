@@ -6,7 +6,6 @@ export default function RecentTrack(props) {
     let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
 
     let obj = props.obj;
-    console.log(obj)
     let arr = obj.played_at.split("T");
     let date = arr[0];
     let time = arr[1].split(".")[0];

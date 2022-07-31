@@ -1,12 +1,1 @@
-<svg
-  width="24"
-  height="24"
-  viewBox="0 0 24 24"
-  fill="none"
-  xmlns="http://www.w3.org/2000/svg"
->
-  <path d="M16 5H4V7H16V5Z" fill="white" />
-  <path d="M16 9H4V11H16V9Z" fill="white" />
-  <path d="M4 13H12V15H4V13Z" fill="white" />
-  <path d="M20 16L14 13V19L20 16Z" fill="white" />
-</svg>
+<svg stroke="white" fill="white" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><g><path fill="none" d="M0 0h24v24H0z"></path><path d="M2 18h10v2H2v-2zm0-7h14v2H2v-2zm0-7h20v2H2V4zm17 11.17V9h5v2h-3v7a3 3 0 1 1-2-2.83zM18 19a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"></path></g></svg>
