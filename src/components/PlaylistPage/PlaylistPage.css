@@ -1,0 +1,27 @@
+.playlists-page {
+    display: flex;
+   justify-content: flex-start;
+   align-items: flex-start;
+   margin-top: 100px;
+   flex-direction: column;
+   width: 60vw;
+}
+.playlist-img {
+    width: 100%;
+   margin-bottom: 10px;    
+}
+.playlists-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5%;
+    flex-wrap: wrap;
+    margin-top: 100px;
+}
+.playlist-card {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    align-items: center;
+    margin-bottom: 30px;
+}
