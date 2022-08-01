@@ -1,4 +1,4 @@
-const CLIENT_ID = "6e26e74044fa468d81eabcf6fea33e9b"
+const CLIENT_ID = "88b1fff7f3af426ba3472d3dcc2fa959"
 const REDIRECT_URI = "http://localhost:3000"
 const AUTH_ENDPOINT = "https://accounts.spotify.com/authorize"
 const RESPONSE_TYPE = "token"
