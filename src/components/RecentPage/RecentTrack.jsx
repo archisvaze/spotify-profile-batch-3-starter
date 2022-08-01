@@ -24,18 +24,24 @@ export default function RecentTrack(props) {
 
 
   return (
-    <div className='recent-track'>
+    <div className='recent-container'>
         <div className="recent-img-container">
             <img src={img} alt="" />
             <div className="recent-name-container">
                 <div className="recent-name">{name}</div>
-                <div className="recent-artists">
+                <div className="recent-artists-container">
                     {artists.map(object => {
                         return (
-                            <div className="recent-artist">{object.name}</div>
+                            <div className="recent-artist-name">{object.name}</div>
                         )
                     })}
                 </div>
+            </div>
+        </div>
+        <div className="recent-time-container">
+            <div className="recent-duration">{duration}</div>
+            <div className="recent-time">
+                Played on {date} at {time}
             </div>
         </div>
     </div>
