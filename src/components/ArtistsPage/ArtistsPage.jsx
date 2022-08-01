@@ -14,21 +14,22 @@ export default function ArtistsPage() {
     dispatch(clearFlag());
     dispatch(setFlag("top-artists"));
 
-
-    fetch("https://api.spotify.com/v1/me/top/artists", {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-        "Authorization": 'Bearer ' + state.token
-      }
-    }).then(response => response.json())
-      .then(
-        data => {
-          console.log(data)
-          dispatch(setArtists(data.items))
-          console.log(state.artists)
+    if (state.artists.length <= 0) {
+      fetch("https://api.spotify.com/v1/me/top/artists", {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": 'Bearer ' + state.token
         }
-      )
+      }).then(response => response.json())
+        .then(
+          data => {
+            console.log(data)
+            dispatch(setArtists(data.items))
+            console.log(state.artists)
+          }
+        )
+    }
   }, [])
 
   return (

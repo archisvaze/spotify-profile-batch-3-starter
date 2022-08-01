@@ -32,7 +32,7 @@ export default function RecentPage() {
       <h3>Your Recently Played Tracks</h3>
       {state.recents.map(obj => {
         return (
-          <RecentTrack key ={obj.played_at} obj={obj}/>
+          <RecentTrack key={obj.played_at} obj={obj} />
         )
       })}
 

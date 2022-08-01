@@ -19,7 +19,7 @@ export default function Sidebar() {
 
 
   return (
-    <div style={{ display: state.flag === "login" ? "none" : "flex" }} className='header-container'>
+    <div style={{ display: state.flag === "login" ? "none" : "flex" }} className='sidebar-container'>
       <Link key={"home"} to={"/"}>
         <img className='top-icon' src={spotify} alt="" />
       </Link>
