@@ -54,11 +54,12 @@ export default function Sidebar() {
 
 
 
-
-        <button style={{ backgroundColor: state.flag === "recents" ? "rgb(51, 51, 51)" : "black", borderLeft: state.flag === "recents" ? " 7px solid #1cd760" : "none" }} className="recent header-btn">
-          <img className='icon' src={recents} alt="" />
-          <p className="icon-tag">Recent</p>
-        </button>
+        <Link style={{ textDecoration: "none" }} key={"recent"} to={"/recent"}>
+          <button style={{ backgroundColor: state.flag === "recent" ? "rgb(51, 51, 51)" : "black", borderLeft: state.flag === "recent" ? " 7px solid #1cd760" : "none" }} className="recent header-btn">
+            <img className='icon' src={recents} alt="" />
+            <p className="icon-tag">Recent</p>
+          </button>
+        </Link>
 
 
 

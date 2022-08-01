@@ -14,6 +14,7 @@ export default function ArtistsPage() {
     dispatch(clearFlag());
     dispatch(setFlag("top-artists"));
 
+
     fetch("https://api.spotify.com/v1/me/top/artists", {
       method: "GET",
       headers: {

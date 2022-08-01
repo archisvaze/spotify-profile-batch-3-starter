@@ -7,7 +7,7 @@ const REDIRECT_URI = "http://localhost:3000/callback"
 const AUTH_ENDPOINT = "https://accounts.spotify.com/authorize"
 const RESPONSE_TYPE = "token"
 const CLIENT_SECRET = "f764b0ca59bb4ccb91d81d3ede3237c7"
-const SCOPE = "user-top-read"
+const SCOPE = "user-top-read user-read-recently-played"
 
 export default function LoginPage() {
 
