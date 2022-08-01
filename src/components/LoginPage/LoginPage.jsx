@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import mySlice, { clearFlag } from '../../slices/mySlice'
+import mySlice, { clearFlag, setFlag } from '../../slices/mySlice'
 import "./LoginPage.css"
 const CLIENT_ID = "6e26e74044fa468d81eabcf6fea33e9b"
 const REDIRECT_URI = "http://localhost:3000/callback"
@@ -13,7 +13,13 @@ export default function LoginPage() {
 
   const state = useSelector(state => state.myState)
   let dispatch = useDispatch()
-  dispatch(clearFlag());
+
+  useEffect(() => {
+    dispatch(clearFlag());
+    dispatch(setFlag("login"))
+  }, [])
+
+
 
 
 

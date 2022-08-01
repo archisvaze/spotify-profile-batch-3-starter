@@ -41,7 +41,6 @@ function App(props) {
             }).then(response => response.json())
                 .then(
                     data => {
-                        console.log(data)
                         dispatch(addUser(data))
                         navigate("/profile")
                     }
