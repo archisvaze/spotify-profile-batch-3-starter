@@ -40,7 +40,7 @@ export default function Sidebar() {
         <Link style={{ textDecoration: "none" }} key={"top-artists"} to={"/top-artists"} >
           <button style={{ backgroundColor: state.flag === "top-artists" ? "rgb(51, 51, 51)" : "black", borderLeft: state.flag === "top-artists" ? " 7px solid #1cd760" : "none" }} className="top-artists header-btn">
             <img className='icon' src={mic} alt="" />
-            <p className="icon-tag">Top Artists</p>
+            <p className="icon-tag">Artists</p>
           </button>
         </Link>
 
@@ -48,7 +48,7 @@ export default function Sidebar() {
         <Link style={{ textDecoration: "none" }} key={"top-tracks"} to={"/top-tracks"} >
           <button style={{ backgroundColor: state.flag === "top-tracks" ? "rgb(51, 51, 51)" : "black", borderLeft: state.flag === "top-tracks" ? " 7px solid #1cd760" : "none" }} className="top-tracks header-btn">
             <img className='icon' src={music} alt="" />
-            <p className="icon-tag">Top Tracks</p>
+            <p className="icon-tag">Tracks</p>
           </button>
         </Link>
 
