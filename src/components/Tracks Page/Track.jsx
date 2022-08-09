@@ -15,8 +15,8 @@ export default function Track(props) {
     }
 
     return (
-        <div className='track-container'>
-
+    // <a className='track-container' href={obj.external_urls.spotify}>
+        <a href={props.obj.external_urls.spotify} className='track-container'>
             <div className="track-left">
                 <img src={img} alt="" />
                 <div className="track-info">
@@ -25,8 +25,8 @@ export default function Track(props) {
                         {artists.map(object => {
                             return (
                                 <p className="track-artist-name">{object.name}</p>
-                            )
-                        })}
+                                )
+                            })}
                     </div>
                 </div>
             </div>
@@ -36,7 +36,8 @@ export default function Track(props) {
             </div>
 
 
-        </div>
+        </a>
+    //   </a> 
     )
 }
 

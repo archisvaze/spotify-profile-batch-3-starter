@@ -28,7 +28,7 @@ export default function Sidebar() {
       <div className="actions-container">
 
         <Link style={{ textDecoration: "none" }} key={"profile"} to={"/profile"}>
-          <button style={{ backgroundColor: state.flag === "profile" ? "rgb(51, 51, 51)" : "black", borderLeft: state.flag === "profile" ? " 7px solid #1cd760" : "none" }} className="profile header-btn">
+          <button style={{ backgroundColor: state.flag === "profile" ? "rgb(51, 51, 51)" : "black", borderLeft: state.flag === "profile" ? " 7px solid #1cd760" : " 7px solid transparent" }} className="profile header-btn">
             <img className='icon' src={profile} alt="" />
             <p className="icon-tag">Profile</p>
           </button>
@@ -38,7 +38,7 @@ export default function Sidebar() {
 
 
         <Link style={{ textDecoration: "none" }} key={"top-artists"} to={"/top-artists"} >
-          <button style={{ backgroundColor: state.flag === "top-artists" ? "rgb(51, 51, 51)" : "black", borderLeft: state.flag === "top-artists" ? " 7px solid #1cd760" : "none" }} className="top-artists header-btn">
+          <button style={{ backgroundColor: state.flag === "top-artists" ? "rgb(51, 51, 51)" : "black", borderLeft: state.flag === "top-artists" ? " 7px solid #1cd760" : " 7px solid transparent" }} className="top-artists header-btn">
             <img className='icon' src={mic} alt="" />
             <p className="icon-tag">Top Artists</p>
           </button>
@@ -46,7 +46,7 @@ export default function Sidebar() {
 
 
         <Link style={{ textDecoration: "none" }} key={"top-tracks"} to={"/top-tracks"} >
-          <button style={{ backgroundColor: state.flag === "top-tracks" ? "rgb(51, 51, 51)" : "black", borderLeft: state.flag === "top-tracks" ? " 7px solid #1cd760" : "none" }} className="top-tracks header-btn">
+          <button style={{ backgroundColor: state.flag === "top-tracks" ? "rgb(51, 51, 51)" : "black", borderLeft: state.flag === "top-tracks" ? " 7px solid #1cd760" : " 7px solid transparent" }} className="top-tracks header-btn">
             <img className='icon' src={music} alt="" />
             <p className="icon-tag">Top Tracks</p>
           </button>
@@ -55,19 +55,19 @@ export default function Sidebar() {
 
 
         <Link style={{ textDecoration: "none" }} key={"recent"} to={"/recent"}>
-          <button style={{ backgroundColor: state.flag === "recent" ? "rgb(51, 51, 51)" : "black", borderLeft: state.flag === "recent" ? " 7px solid #1cd760" : "none" }} className="recent header-btn">
+          <button style={{ backgroundColor: state.flag === "recent" ? "rgb(51, 51, 51)" : "black", borderLeft: state.flag === "recent" ? " 7px solid #1cd760" : " 7px solid transparent" }} className="recent header-btn">
             <img className='icon' src={recents} alt="" />
             <p className="icon-tag">Recent</p>
           </button>
         </Link>
 
 
-
-        <button style={{ backgroundColor: state.flag === "playlist" ? "rgb(51, 51, 51)" : "black", borderLeft: state.flag === "playlist" ? " 7px solid #1cd760" : "none" }} className="playlist header-btn">
+        <Link style={{ textDecoration: "none" }} key={"playlists"} to={"/playlists"}>
+        <button style={{ backgroundColor: state.flag === "playlists" ? "rgb(51, 51, 51)" : "black", borderLeft: state.flag === "playlists" ? " 7px solid #1cd760" : " 7px solid transparent" }} className="playlist header-btn">
           <img className='icon' src={playlist} alt="" />
           <p className="icon-tag">Playlists</p>
         </button>
-
+        </Link>
 
       </div>
 

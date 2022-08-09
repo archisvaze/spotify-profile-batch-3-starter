@@ -10,7 +10,7 @@ export default function ArtistsPage() {
   let state = useSelector(state => state.myState)
 
   function fetchAll() {
-    fetch("https://api.spotify.com/v1/me/top/artists", {
+    fetch("https://api.spotify.com/v1/me/top/artist", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -54,7 +54,10 @@ export default function ArtistsPage() {
       <div className="artists-container">
         {state.artists.map(obj => {
           return (
-            <Artist key={obj.id} obj={obj} />
+            <a href={obj.external_urls.spotify}>
+              
+              <Artist key={obj.id} obj={obj} />
+            </a>
           )
         })}
       </div>

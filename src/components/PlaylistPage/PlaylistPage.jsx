@@ -9,7 +9,7 @@ export default function PlaylistPage() {
     dispatch(clearFlag());
     dispatch(setFlag("playlists"));
 
-    if (state.artists.length <= 0) {
+    if (state.playlists.length <= 0) {
       fetch("https://api.spotify.com/v1/me/playlists", {
         method: "GET",
         headers: {
@@ -31,11 +31,11 @@ export default function PlaylistPage() {
       <h2>Your Playlists</h2>
       <div className='playlists-container' >
       {state.playlists.map(ele=>{
-        return <div className='playlist-card'>
+        return <a href={ele.external_urls.spotify} className='playlist-card'>
         <img className='playlist-img' src={ele.images[0].url} alt="" />
         <h3>{ele.name}</h3>
         <p>{ele.tracks.total} Tracks</p>
-          </div>
+          </a>
       })}
       
       </div>

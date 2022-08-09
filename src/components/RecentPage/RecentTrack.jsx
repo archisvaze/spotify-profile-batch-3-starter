@@ -22,8 +22,11 @@ export default function RecentTrack(props) {
     }
 
 
+    console.log(obj)
   return (
-    <div className='recent-container'>
+    <a
+     href={props.obj.track.external_urls.spotify}
+     className='recent-container'>
         <div className="recent-img-container">
             <img src={img} alt="" />
             <div className="recent-name-container">
@@ -43,6 +46,6 @@ export default function RecentTrack(props) {
                 Played on {date} at {time}
             </div>
         </div>
-    </div>
+    </a>
   )
 }

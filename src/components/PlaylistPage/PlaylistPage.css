@@ -24,6 +24,11 @@
     width: 30%;
     align-items: center;
     margin-bottom: 30px;
+    height: 234px;
+}
+.playlist-card h3 {
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 @media only screen and (max-width:480px) {
     .playlists-page {

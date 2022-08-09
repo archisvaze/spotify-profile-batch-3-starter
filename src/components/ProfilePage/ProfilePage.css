@@ -55,11 +55,13 @@
     justify-content: flex-start;
     align-items: flex-start;
     position: relative;
-    height: 280px;
+    min-height: 280px;
 }
 .artist-pic,.album-pic{
-    height: 90%;
+    height: 63px;
+    width: 63px;
     border-radius: 30px;
+    background-color: yellow;
 }
 .profile-artist-label,.profile-tracks-label {
     display: flex;
@@ -74,13 +76,27 @@
     justify-content: flex-start;
     align-items: center;
     gap: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    width: 100%;
 }
 .track-length {
     position: absolute;
     right: 10px;
 }
+.track-detail{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
 .logout {
     margin-left: 20px;
+}
+.empty-status {
+    margin-top: 50%;
+    margin-left: 80%;
+    width: 100%;
 }
 @media only screen and (max-width:480px) {
     .bottom-profile-container {

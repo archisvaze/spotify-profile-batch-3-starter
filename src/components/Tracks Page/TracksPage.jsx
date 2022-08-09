@@ -35,6 +35,7 @@ export default function TracksPage() {
       <h3>Your Top Tracks</h3>
       {state.tracks.map(obj => {
         return (
+          
           <Track key={obj.id} obj={obj} />
         )
       })}
