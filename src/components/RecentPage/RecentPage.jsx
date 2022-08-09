@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { clearFlag, setArtists, setFlag, setRecents } from '../../slices/mySlice';
-import Track from '../Tracks Page/Track';
 import RecentTrack from './RecentTrack';
 
 export default function RecentPage() {
@@ -22,7 +21,6 @@ export default function RecentPage() {
     }).then(response => response.json())
       .then(
         data => {
-          console.log(data)
           dispatch(setRecents(data.items))
         }
       )

@@ -19,7 +19,6 @@ export default function PlaylistPage() {
       }).then(response => response.json())
         .then(
           data => {
-            console.log(data)
             dispatch(setPlaylists(data.items))
             
           }

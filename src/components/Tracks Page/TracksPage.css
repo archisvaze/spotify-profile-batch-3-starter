@@ -1,11 +1,13 @@
 .tracks-page-container {
     min-height: 100%;
     min-width: 100vw;
-    padding-top: 50px;
-    padding-left: 0;
+    
+    margin-top: 50px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 100px;
+ 
 }
 
 .track-container {
@@ -25,7 +27,26 @@
 .track-container:hover {
     transform: scale(1.05);
 }
-
+.tracks-page-label{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 5vw;
+    padding-right: 5vw;
+    margin-bottom: 50px;
+}
+.filters {
+    display: flex;
+    margin-top: 10px;
+    justify-content: space-between;
+    width: 100%;
+    gap: 10px;
+}
+.filters p {
+    cursor: pointer;
+}
 .track-name {
     margin: 5px 0;
     font-size: 16px;
@@ -60,5 +81,13 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+    }
+    .tracks-page-label{
+     flex-direction: row;
+     justify-content: space-between;
+    }
+    .filters {
+        justify-content: space-between;
+        width: 40%;
     }
 }

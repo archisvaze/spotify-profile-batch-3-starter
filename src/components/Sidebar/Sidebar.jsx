@@ -8,13 +8,11 @@ import recents from "./recents.svg"
 import playlist from "./playlist.svg"
 import github from "./github.svg"
 import { Link } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
-import { clearFlag } from '../../slices/mySlice';
+import { useSelector } from 'react-redux';
 
 
 export default function Sidebar() {
 
-  let dispatch = useDispatch()
   let state = useSelector(state => state.myState)
 
 
@@ -70,8 +68,9 @@ export default function Sidebar() {
         </Link>
 
       </div>
-
+      <a href="https://github.com/IbrahimSaffi">
       <img className='top-icon' src={github} alt="" />
+      </a>
 
     </div>
   )

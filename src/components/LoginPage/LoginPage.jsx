@@ -19,10 +19,6 @@ export default function LoginPage() {
     dispatch(setFlag("login"))
   }, [])
 
-
-
-
-
   return (
     <div className='login-page' >
       <h1 className='login-label' >Spotify Profile</h1>

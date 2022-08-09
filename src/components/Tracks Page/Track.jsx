@@ -15,7 +15,6 @@ export default function Track(props) {
     }
 
     return (
-    // <a className='track-container' href={obj.external_urls.spotify}>
         <a href={props.obj.external_urls.spotify} className='track-container'>
             <div className="track-left">
                 <img src={img} alt="" />
@@ -34,10 +33,7 @@ export default function Track(props) {
             <div className="track-right">
 <p className="track-time">{time}</p>
             </div>
-
-
         </a>
-    //   </a> 
     )
 }
 

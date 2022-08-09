@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
-import { clearFlag, logout, setArtists, setFlag } from '../../slices/mySlice'
+import { clearFlag, logout, setFlag } from '../../slices/mySlice'
 import "./ProfilePage.css"
 
 export default function ProfilePage() {
@@ -20,7 +20,6 @@ export default function ProfilePage() {
   }, [])
 
   let navigate = useNavigate()
-  console.log(state)
   return (
     <div className='profile-page-container'>
       <div className="top-profile-container">
@@ -70,10 +69,7 @@ export default function ProfilePage() {
                 return null
               }
             })}
-            {/* <div className='profile-artists-card' >
-              <img className='artist-pic' src={user.images[0].url} alt="" />
-              <p>Artist name</p>
-            </div> */}
+              
           </div>
         </div>
         <div className='profile-top-tracks-container' >
@@ -90,7 +86,7 @@ export default function ProfilePage() {
                    <div className='profile-tracks-card' >
                 <img className='album-pic' src={obj.album.images[0].url} alt="" />
                 <div className='track-detail' >
-                  <p>{obj.name}</p>
+                  <p className='track-name' >{obj.name}</p>
                   <p> {obj.artists.map(object => {
                     return (
                       <span className="track-artist-name">{object.name}</span>

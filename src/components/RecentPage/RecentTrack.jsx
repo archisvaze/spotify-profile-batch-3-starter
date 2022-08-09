@@ -22,7 +22,6 @@ export default function RecentTrack(props) {
     }
 
 
-    console.log(obj)
   return (
     <a
      href={props.obj.track.external_urls.spotify}
