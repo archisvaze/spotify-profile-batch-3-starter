@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
-import { clearFlag, logout, setArtists, setFlag } from '../../slices/mySlice'
+import { clearFlag, logout, setFlag } from '../../slices/mySlice'
 import "./ProfilePage.css"
 
 export default function ProfilePage() {
@@ -16,16 +16,16 @@ export default function ProfilePage() {
 }
   useEffect(() => {
     dispatch(clearFlag());
-
     dispatch(setFlag("profile"));
   }, [])
 
   let navigate = useNavigate()
-  console.log(state)
   return (
     <div className='profile-page-container'>
       <div className="top-profile-container">
+        <a href={user.external_urls.spotify}>
         <img className='profile-pic' src={user.images[0].url} alt="" />
+        </a>
         <h1>{user.display_name}</h1>
         <div className="profile-stats">
           <div className='stats-container'>
@@ -37,7 +37,7 @@ export default function ProfilePage() {
             <p>FOLLOWING</p>
           </div>
           <div className='stats-container'>
-            <h1 className='stat-nums'>{user.followers.total}</h1>
+            <h1 className='stat-nums'>{state.playlists.length}</h1>
             <p>PLAYLIST</p>
           </div>
         </div>
@@ -55,16 +55,21 @@ export default function ProfilePage() {
             }} className='profile-btns'>SEE MORE</button>
           </div>
           <div className='profile-artists-list' >
-            {state.artists.map(ele => {
+            {state.artists.length===0?<p className='empty-status' >Wow such empty</p>:state.artists.map((ele,i) => {
+                if(i<5){
+              return <a href={ele.external_urls.spotify}>
               <div className='profile-artists-card' >
-                <img src="" alt="" />
-                <p></p>
+                <img className='artist-pic' src={ele.images[0].url} alt="" />
+                <p>{ele.name}</p>
               </div>
+
+              </a>
+              }
+              else {
+                return null
+              }
             })}
-            <div className='profile-artists-card' >
-              <img className='artist-pic' src={user.images[0].url} alt="" />
-              <p>Artist name</p>
-            </div>
+              
           </div>
         </div>
         <div className='profile-top-tracks-container' >
@@ -75,19 +80,26 @@ export default function ProfilePage() {
             }} className='profile-btns'>SEE MORE</button>
           </div>
           <div className='profile-tracks-list' >
-            {state.tracks.map(obj => {
-              return <div className='profile-tracks-card' >
+            { state.tracks.length===0? <p className='empty-status' >Wow such empty</p>:state.tracks.map((obj,i) => {
+              if(i<5){
+                return <a href={obj.external_urls.spotify}>
+                   <div className='profile-tracks-card' >
                 <img className='album-pic' src={obj.album.images[0].url} alt="" />
                 <div className='track-detail' >
-                  <p>{obj.name}</p>
+                  <p className='track-name' >{obj.name}</p>
                   <p> {obj.artists.map(object => {
                     return (
                       <span className="track-artist-name">{object.name}</span>
-                    )
-                  })}</p>
+                      )
+                    })}</p>
                 </div>
                 <p className='track-length' >{convertToMins(obj.duration_ms)}</p>
               </div>
+                    </a>
+              }
+              else {
+                return null
+              }
             })}
           </div>
         </div>

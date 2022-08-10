@@ -1,8 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { useNavigate } from "react-router-dom";
 let initialState = {};
 if (localStorage.getItem("spotifyState") === null) {
-    initialState = { saved: "", token: "", artists: [], flag: "profile", tracks: [], recents :[],playlists:[] }
+    initialState = { saved: "", token: "", artists: [], flag: "profile", tracks: [],artistsAllTime:[],artistsLastSixMonths:[],artistsLastFourWeeks:[],tracksAllTime:[],tracksLastSixMonths:[],tracksLastFourWeeks:[], recents :[],playlists:[] ,artistsFilter:"all time",tracksFilter:"all time"}
 }
 else {
     initialState = JSON.parse(localStorage.getItem("spotifyState"));
@@ -21,8 +20,14 @@ const mySlice = createSlice({
         addUser: (state, action) => {
             state.user = action.payload;
         },
-        setArtists: (state, action) => {
-            state.artists = action.payload;
+        setArtistsLT: (state, action) => {
+            state.artistsAllTime = action.payload;
+        },
+        setArtistsMT: (state, action) => {
+            state.artistsLastSixMonths = action.payload;
+        },
+        setArtistsST: (state, action) => {
+            state.artistsLastFourWeeks = action.payload;
         },
         setFlag: (state, action) => {
             state.flag = action.payload
@@ -30,8 +35,14 @@ const mySlice = createSlice({
         clearFlag: (state, action) => {
             state.flag = "";
         },
-        setTracks: (state, action) => {
-            state.tracks = action.payload
+        setTracksLT: (state, action) => {
+            state.tracksAllTime = action.payload
+        },
+        setTracksMT: (state, action) => {
+            state.tracksLastSixMonths = action.payload
+        },
+        setTracksST: (state, action) => {
+            state.tracksLastFourWeeks = action.payload
         },
         setRecents : (state, action) =>{
             state.recents = action.payload
@@ -45,12 +56,35 @@ const mySlice = createSlice({
            state.playlists= []
            state.recents= []
            state.tracks = []
-
+        },
+        changeArtistsFilter:(state,action)=>{
+            state.artistsFilter = action.payload
+            if(action.payload ==="all time"){
+             state.artists =  state.artistsAllTime
+         }
+         if(action.payload ==="last six months"){
+            state.artists =  state.artistsLastSixMonths
         }
+        if(action.payload ==="last four weeks"){
+            state.artists =  state.artistsLastFourWeeks
+        }
+        },
+        changeTracksFilter:(state,action)=>{
+            state.tracksFilter = action.payload
+            if(action.payload ==="all time"){
+                state.tracks =  state.tracksAllTime
+            }
+            if(action.payload ==="last six months"){
+                state.tracks =  state.tracksLastSixMonths
+            }
+            if(action.payload ==="last four weeks"){
+                state.tracks =  state.tracksLastFourWeeks
+            }
+           }
 
     }
 })
 
 
-export const { save, addToken, addUser, setArtists, setFlag, clearFlag, setTracks, setRecents,setPlaylists,logout } = mySlice.actions;
+export const { save, addToken, addUser, setArtists, setFlag, clearFlag, setTracks, setRecents,setPlaylists,logout,changeArtistsFilter,changeTracksFilter,setArtistsMT,setTracksST,setArtistsST,setTracksMT ,setArtistsLT,setTracksLT} = mySlice.actions;
 export default mySlice.reducer;

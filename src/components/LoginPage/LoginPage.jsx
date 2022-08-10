@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import mySlice, { clearFlag, setFlag } from '../../slices/mySlice'
 import "./LoginPage.css"
-const CLIENT_ID = "6e26e74044fa468d81eabcf6fea33e9b"
+const CLIENT_ID = "88b1fff7f3af426ba3472d3dcc2fa959"
 const REDIRECT_URI = "http://localhost:3000/callback"
 const AUTH_ENDPOINT = "https://accounts.spotify.com/authorize"
 const RESPONSE_TYPE = "token"
@@ -18,10 +18,6 @@ export default function LoginPage() {
     dispatch(clearFlag());
     dispatch(setFlag("login"))
   }, [])
-
-
-
-
 
   return (
     <div className='login-page' >
